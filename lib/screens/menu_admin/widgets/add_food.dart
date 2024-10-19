@@ -20,6 +20,8 @@ class AddFoodItem extends StatelessWidget {
       init: AddFoodItemController(item: item),
       builder: (controller) {
         return Scaffold(
+          resizeToAvoidBottomInset: false,
+
           backgroundColor: const Color(0xffFFFEF9),
           body: Column(
             children: [

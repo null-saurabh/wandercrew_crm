@@ -20,10 +20,11 @@ class AddNewUserAdmin extends StatelessWidget {
     return GetBuilder<AddNewUserAdminController>(
       init: AddNewUserAdminController(data: data),
       builder: (controller) {
-        // print("starting3");
         return Scaffold(
+          resizeToAvoidBottomInset: false,
           backgroundColor: const Color(0xffFFFEF9),
           body: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Container(
                 color: Colors.white,

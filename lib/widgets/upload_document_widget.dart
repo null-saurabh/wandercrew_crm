@@ -69,7 +69,7 @@ class UploadDocumentWidget extends StatelessWidget {
                 if (isDocumentInvalid) ...[
                   const SizedBox(height: 4),
                   const Text(
-                    "*Required.",
+                    "*Mandatory.",
                     style: TextStyle(color: Colors.red),
                   ),
                 ],

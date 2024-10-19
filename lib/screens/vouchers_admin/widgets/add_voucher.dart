@@ -22,6 +22,7 @@ class AddVoucherAdmin extends StatelessWidget {
       init: AddVoucherAdminController(data: data),
       builder: (controller) {
         return Scaffold(
+          resizeToAvoidBottomInset: false,
           backgroundColor: const Color(0xffFFFEF9),
           body: Column(
             mainAxisSize: MainAxisSize.min,
@@ -272,7 +273,6 @@ class AddVoucherAdmin extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 16.0),
-
                           ElevatedContainer(
                             child: Obx(() {
                               return AppDropDown(

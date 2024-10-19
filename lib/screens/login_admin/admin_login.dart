@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:wander_crew_crm/widgets/widget_support.dart';
+import '../../widgets/edit_text.dart';
 import '../../widgets/gradient_texture.dart';
 import 'admin_login_controller.dart';
 
@@ -40,70 +42,71 @@ class AdminLogin extends StatelessWidget {
         
             Container(
               margin:  EdgeInsets.only(left: 30.0, right: 30.0, top: MediaQuery.of(context).size.height * 0.12),
-              child: Form(
-                key: controller.formKey,
-                child: Column(
-                  children: [
-                    const Text(
-                      "Let's start with",
-                      // textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.w400,
+              child: Column(
+                children: [
+                  const Text(
+                    "Let's start with",
+                    // textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  const Text(
+                    "Admin",
+                    // textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Container(
+                    width: 80, // Adjust this width as per your design
+                    height: 3.0, // Thickness of the underline
+                    color: const Color(0xff36DCA4), // Green underline
+                  ),
+                  const SizedBox(height: 52.0),
+                  // Form fields and Login Button
+                  Material(
+                    elevation: 3.0,
+                    borderRadius: BorderRadius.circular(12),
+                    child: Container(
+                      // height: MediaQuery.of(context).size.height / 2.2,
+                      padding: const EdgeInsets.symmetric(horizontal: 24.0,vertical: 24),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                    ),
-                    const Text(
-                      "Admin",
-                      // textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    Container(
-                      width: 80, // Adjust this width as per your design
-                      height: 3.0, // Thickness of the underline
-                      color: const Color(0xff36DCA4), // Green underline
-                    ),
-                    const SizedBox(height: 52.0),
-                    // Form fields and Login Button
-                    Material(
-                      elevation: 3.0,
-                      borderRadius: BorderRadius.circular(12),
-                      child: Container(
-                        // height: MediaQuery.of(context).size.height / 2.2,
-                        padding: const EdgeInsets.symmetric(horizontal: 24.0,vertical: 24),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
+                      child: Form(
+                        key: controller.formKey,
+
                         child: Column(
                           children: [
-        
-                            _buildTextField(
-                              controller: controller.usernameController,
-                              hintText: "Username",
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter a username';
-                                }
-                                return null;
-                              },
+
+                            EditText(
+                              showLabel: false,
+                              height: 48,
+                              hint: "Email",
+                              controller:  controller.usernameController,
+                              onValidate: Validators.validateRequiredEmail,
+                              paddingBottom: false,
+
                             ),
                             const SizedBox(height: 12.0),
-                            _buildTextField(
-                              controller: controller.passwordController,
-                              hintText: "Password",
-                              isPassword: true,
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter a password';
-                                }
-                                return null;
-                              },
+
+                            EditText(
+                              showLabel: false,
+
+                              height: 48,
+                              paddingBottom: false,
+                              hint: "Password",
+                              controller:  controller.passwordController,
+                              onValidate: Validators.requiredField,
+                              obscureText: true,
                             ),
+
                             const SizedBox(height: 20.0),
                             Obx(() => GestureDetector(
                               onTap: controller.isLoading.value
@@ -144,8 +147,8 @@ class AdminLogin extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ],

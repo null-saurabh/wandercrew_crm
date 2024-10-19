@@ -13,7 +13,8 @@ class AuthService extends GetxService {
 
   @override
   void onInit() {
-    super.onInit();
+
+        super.onInit();
     _auth.authStateChanges().listen((User? user) {
       if (user != null) {
         isLoggedIn.value = true;

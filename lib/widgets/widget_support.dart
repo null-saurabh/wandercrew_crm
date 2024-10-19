@@ -262,14 +262,14 @@ class AppWidget{
 class Validators {
   static String? requiredField(value) {
     if (value == null || value.isEmpty) {
-      return "*Required";
+      return "*Mandatory";
     }
     return null;
   }
 
   static String? validateInt(String? value) {
     if (value == null || value.isEmpty) {
-      return "*Required";
+      return "*Mandatory";
     }
     final intValue = int.tryParse(value);
     if (intValue == null) {
@@ -280,7 +280,7 @@ class Validators {
 
   static String? validateDouble(String? value) {
     if (value == null || value.isEmpty) {
-      return "*Required";
+      return "*Mandatory";
     }
     final doubleValue = double.tryParse(value);
     if (doubleValue == null) {
@@ -302,9 +302,23 @@ class Validators {
   }
 
 
+  static String? validateRequiredEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return "*Mandatory";
+    }
+    final emailRegExp = RegExp(
+
+        r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
+    if (!emailRegExp.hasMatch(value)) {
+      return "Invalid email";
+    }
+    return null;
+  }
+
+
   static String? validatePhoneNumber(String? value) {
     if (value == null || value.isEmpty) {
-      return "*Required";
+      return "*Mandatory";
     }
 
     // Check if the phone number is a valid format (basic regex for digits)

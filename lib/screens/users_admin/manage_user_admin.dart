@@ -109,29 +109,29 @@ class ManageUserAdmin extends StatelessWidget {
                                 onPressed: () {
 
 
-                                  showModalBottomSheet(
-                                    context: context,
-                                    isScrollControlled: true, // Allows the bottom sheet to expand with the keyboard
+                                  // showModalBottomSheet(
+                                  //   context: context,
+                                  //   isScrollControlled: true, // Allows the bottom sheet to expand with the keyboard
+                                  //   backgroundColor: const Color(0xffF4F5FA),
+                                  //   shape: const RoundedRectangleBorder(
+                                  //     borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+                                  //   ),
+                                  //   builder: (context) {
+                                  //     return const AddNewUserAdmin(); // Your widget for the bottom sheet
+                                  //   },
+                                  // );
+
+
+                                  Get.bottomSheet(
+                                    const AddNewUserAdmin(),
+                                    isScrollControlled:
+                                        true, // Allows the bottom sheet to expand with keyboard
                                     backgroundColor: const Color(0xffF4F5FA),
                                     shape: const RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+                                      borderRadius: BorderRadius.vertical(
+                                          top: Radius.circular(16)),
                                     ),
-                                    builder: (context) {
-                                      return const AddNewUserAdmin(); // Your widget for the bottom sheet
-                                    },
                                   );
-
-
-                                  // Get.bottomSheet(
-                                  //   AddNewUserAdmin(),
-                                  //   isScrollControlled:
-                                  //       true, // Allows the bottom sheet to expand with keyboard
-                                  //   backgroundColor: Color(0xffF4F5FA),
-                                  //   shape: RoundedRectangleBorder(
-                                  //     borderRadius: BorderRadius.vertical(
-                                  //         top: Radius.circular(16)),
-                                  //   ),
-                                  // );
                                 },
 
 

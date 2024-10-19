@@ -159,7 +159,7 @@ class EditText extends StatelessWidget {
 
                   decoration: InputDecoration(
 
-                    contentPadding: EdgeInsets.only(top:12, bottom:12, left:12, right:12),
+                    contentPadding: EdgeInsets.only(top:0, bottom:18, left:12, right:12),
                     isDense: true,
                     counterText: "",
                     hintText: hint ?? '',
