@@ -66,6 +66,7 @@ class MenuAdminScreen extends StatelessWidget {
                                     onChanged: (value) => controller
                                         .searchFilterMenuItems(value), // Call the search function
                                     decoration: InputDecoration(
+                                      contentPadding: EdgeInsets.zero,
                                       hintText: "Search by item name",
                                       hintStyle: const TextStyle(color: Colors.grey),
                                       prefixIcon: const Icon(Icons.search, color: Colors.grey),

@@ -146,7 +146,7 @@ class CheckInListAdmin extends StatelessWidget {
                 ),
               ),
 
-
+              SizedBox(height: 12,),
 
               Obx(() {
                 if (controller.checkInList.isNotEmpty) {

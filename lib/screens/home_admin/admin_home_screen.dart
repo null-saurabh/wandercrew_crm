@@ -55,9 +55,6 @@ class AdminHomeScreen extends StatelessWidget {
                     const SizedBox(height: 48,),
 
 
-                    TextButton(onPressed: (){
-                      sendTestNotification();
-                    }, child: Text("Send")),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -151,7 +148,7 @@ class AdminHomeScreen extends StatelessWidget {
                         ReceptionHomeGridItem(
                           width: 354,
                           height: 84,
-                          widthRatio: 0.90,
+                          widthRatio: 0.84,
                           isFeedbackList: true,
                           iconHeight: 55,
                           iconWidth: 55,
@@ -173,21 +170,6 @@ class AdminHomeScreen extends StatelessWidget {
             ),
           ),
         );
-  }
-
-  Future<void> sendTestNotification() async {
-    final url = 'https://us-central1-wander-crew.cloudfunctions.net/sendTestNotification';
-    final response = await http.post(
-      Uri.parse(url),
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({'token': "flaZkF-FT4CaZoUWSy2hb9:APA91bEbC3Y6N-G6o-kX0W4BYnDiwrA_YGD-_a7Qb_-1i4mRMSibvNq2eCL3hDbtKdmxpXAEz05j_1_vvPqfvTURTu22Qs801iOAssny5mHiWW39lvUcjO48xZ_qg8_d9E6KJzYLitRb"}),
-    );
-
-    if (response.statusCode == 200) {
-      print('Notification sent successfully');
-    } else {
-      print('Failed to send notification: ${response.body}');
-    }
   }
 
 

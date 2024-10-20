@@ -73,6 +73,8 @@ class OrdersListScreen extends StatelessWidget {
                                           controller.searchFilterOrderItems(
                                               value), // Call the search function
                                       decoration: InputDecoration(
+                                        contentPadding: EdgeInsets.zero,
+
                                         hintText:
                                             "Search by name, number, orderId",
                                         hintStyle:
